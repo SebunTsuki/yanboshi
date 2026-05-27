@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>时小悠 Web2D v0.1</title>
+    <link rel="stylesheet" href="./styles.css?v=20260527-1540" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="stage-shell" aria-label="时小悠 Web2D 原型">
+        <div class="brand-strip">
+          <span class="brand-name">悠然时光</span>
+          <span id="status">loading</span>
+        </div>
+        <div id="puppet-root" class="puppet-root"></div>
+      </section>
+
+      <aside class="control-panel" aria-label="原型控制台">
+        <div>
+          <p class="eyebrow">Web2D v0.1</p>
+          <h1>时小悠动捕预览</h1>
+          <p class="summary">PSD 分层驱动的待机、眨眼、呼吸和程序嘴型。</p>
+        </div>
+
+        <label class="toggle-row">
+          <input id="speak-toggle" type="checkbox" checked />
+          <span>自动口型</span>
+        </label>
+
+        <label class="slider-row">
+          <span>手动张嘴</span>
+          <input id="energy" type="range" min="0" max="1" step="0.01" value="0" />
+        </label>
+
+        <div class="expression-group" aria-label="表情切换">
+          <span>表情</span>
+          <div class="expression-buttons">
+            <button class="expression-button is-active" data-expression="neutral" type="button">默认</button>
+            <button class="expression-button" data-expression="happy" type="button">开心</button>
+            <button class="expression-button" data-expression="surprise" type="button">惊讶</button>
+          </div>
+        </div>
+
+        <button id="reset" type="button">重置</button>
+      </aside>
+    </main>
+
+    <script type="module" src="./src/app.js?v=20260527-1540"></script>
+  </body>
+</html>

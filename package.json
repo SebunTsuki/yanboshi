@@ -1,0 +1,13 @@
+{
+  "name": "web2d-host-v1",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "python -m http.server 4173"
+  },
+  "devDependencies": {
+    "ws": "^8.21.0"
+  }
+}

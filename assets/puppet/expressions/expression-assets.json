@@ -1,0 +1,47 @@
+{
+  "mouth-a": {
+    "file": "expressions/mouth-a.png",
+    "width": 97,
+    "height": 112
+  },
+  "mouth-i": {
+    "file": "expressions/mouth-i.png",
+    "width": 35,
+    "height": 71
+  },
+  "mouth-u": {
+    "file": "expressions/mouth-u.png",
+    "width": 48,
+    "height": 58
+  },
+  "mouth-e": {
+    "file": "expressions/mouth-e.png",
+    "width": 121,
+    "height": 64
+  },
+  "mouth-o": {
+    "file": "expressions/mouth-o.png",
+    "width": 49,
+    "height": 57
+  },
+  "mouth-rest": {
+    "file": "expressions/mouth-rest.png",
+    "width": 131,
+    "height": 26
+  },
+  "mouth-smile": {
+    "file": "expressions/mouth-smile.png",
+    "width": 131,
+    "height": 26
+  },
+  "eye-happy-r": {
+    "file": "expressions/eye-happy-r.png",
+    "width": 137,
+    "height": 34
+  },
+  "eye-happy-l": {
+    "file": "expressions/eye-happy-l.png",
+    "width": 139,
+    "height": 34
+  }
+}

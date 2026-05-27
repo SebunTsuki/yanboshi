@@ -1,0 +1,337 @@
+:root {
+  color-scheme: dark;
+  --ink: #f6f3ec;
+  --muted: #b9c4c0;
+  --panel: rgba(17, 22, 25, 0.72);
+  --line: rgba(255, 255, 255, 0.14);
+  --mint: #6fd6bd;
+  --orange: #ff9b4a;
+  --deep: #101419;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(111, 214, 189, 0.22), transparent 28rem),
+    linear-gradient(135deg, #101419 0%, #172024 46%, #0c1013 100%);
+  color: var(--ink);
+  font-family:
+    "Microsoft YaHei UI",
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  height: 100svh;
+  padding: 24px;
+}
+
+.stage-shell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 42%, rgba(255, 155, 74, 0.1), transparent 30rem),
+    rgba(5, 8, 10, 0.52);
+  background-size: 42px 42px, 42px 42px, auto, auto;
+  border-radius: 8px;
+}
+
+.brand-strip {
+  position: absolute;
+  z-index: 5;
+  top: 18px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.brand-name {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.puppet-root {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(62vw, 720px);
+  max-height: calc(100svh - 70px);
+  aspect-ratio: 1 / 1;
+}
+
+.puppet-stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--canvas-width) * 1px);
+  height: calc(var(--canvas-height) * 1px);
+  overflow: visible;
+  transform:
+    translate(-50%, -50%)
+    translateY(1.5%)
+    scale(var(--stage-scale, 1));
+  transform-origin: 50% 50%;
+}
+
+.puppet-layer,
+.procedural-mouth {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  transform-box: fill-box;
+}
+
+.puppet-layer {
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.is-source-mouth {
+  opacity: 0;
+}
+
+.is-source-mouth.is-active-source-mouth {
+  opacity: 1;
+}
+
+.head-layer {
+  transform:
+    translateX(var(--head-x, 0))
+    rotate(var(--head-rotate, 0deg));
+  transform-origin: 50% 82%;
+}
+
+.breath-layer {
+  transform:
+    translateY(var(--breath-y, 0))
+    scale(var(--breath-scale, 1));
+  transform-origin: 50% 72%;
+}
+
+.head-layer.breath-layer {
+  transform:
+    translateX(var(--head-x, 0))
+    translateY(var(--breath-y, 0))
+    rotate(var(--head-rotate, 0deg))
+    scale(var(--breath-scale, 1));
+}
+
+.sway-layer {
+  transform:
+    translate(var(--sway-x, 0), var(--sway-y, 0))
+    rotate(var(--sway-rotate, 0deg));
+}
+
+.breath-layer.sway-layer {
+  transform:
+    translateY(var(--breath-y, 0))
+    scale(var(--breath-scale, 1))
+    translate(var(--sway-x, 0), var(--sway-y, 0))
+    rotate(var(--sway-rotate, 0deg));
+}
+
+.head-layer.sway-layer {
+  transform:
+    translateX(var(--head-x, 0))
+    translate(var(--sway-x, 0), var(--sway-y, 0))
+    rotate(calc(var(--head-rotate, 0deg) + var(--sway-rotate, 0deg)));
+}
+
+.head-layer.breath-layer.sway-layer {
+  transform:
+    translateX(var(--head-x, 0))
+    translateY(var(--breath-y, 0))
+    translate(var(--sway-x, 0), var(--sway-y, 0))
+    rotate(calc(var(--head-rotate, 0deg) + var(--sway-rotate, 0deg)))
+    scale(var(--breath-scale, 1));
+}
+
+.eye-layer {
+  transform:
+    translateX(var(--head-x, 0))
+    rotate(var(--head-rotate, 0deg))
+    scaleY(var(--eye-scale, 1));
+  transform-origin: 50% 50%;
+}
+
+.procedural-mouth {
+  z-index: 40;
+  overflow: visible;
+  transform:
+    translateX(var(--head-x, 0))
+    translateY(var(--breath-y, 0))
+    rotate(var(--head-rotate, 0deg));
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.3));
+}
+
+.sprite-mouth,
+.expression-overlay {
+  position: absolute;
+  z-index: 42;
+  user-select: none;
+  pointer-events: none;
+  object-fit: contain;
+  transform:
+    translateX(var(--head-x, 0))
+    translateY(var(--breath-y, 0))
+    rotate(var(--head-rotate, 0deg));
+  transform-origin: 50% 50%;
+}
+
+.expression-overlay {
+  z-index: 39;
+}
+
+.is-expression-hidden {
+  opacity: 0;
+}
+
+.mouth-path {
+  stroke: #3e2225;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    d 80ms linear,
+    fill 80ms linear,
+    stroke-width 80ms linear;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: stretch;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--mint);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.summary {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.toggle-row,
+.slider-row,
+.expression-group {
+  display: grid;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.toggle-row {
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--mint);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--orange);
+}
+
+button {
+  width: 100%;
+  min-height: 42px;
+  margin-top: auto;
+  border: 0;
+  border-radius: 6px;
+  background: var(--orange);
+  color: #271309;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.expression-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.expression-button {
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.expression-button.is-active {
+  border-color: transparent;
+  background: var(--mint);
+  color: #061414;
+}
+
+@media (max-width: 880px) {
+  body {
+    overflow: auto;
+  }
+
+  .app-shell {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100svh;
+    padding: 14px;
+  }
+
+  .stage-shell {
+    min-height: 68svh;
+  }
+
+  .puppet-root {
+    width: min(96vw, 680px);
+  }
+
+  .control-panel {
+    min-height: auto;
+  }
+}

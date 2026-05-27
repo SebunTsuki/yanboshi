@@ -1,0 +1,11 @@
+node_modules/
+
+# Local debug/export artifacts
+debug_*/
+debug-*.png
+preview-*.png
+
+# Logs and editor/system noise
+*.log
+.DS_Store
+Thumbs.db

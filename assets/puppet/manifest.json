@@ -1,0 +1,255 @@
+{
+  "source": "C:\\Users\\Administrator\\Downloads\\seethrough_output.psd",
+  "canvas": {
+    "width": 1280,
+    "height": 1280
+  },
+  "mouthAnchor": {
+    "x": 631.5,
+    "y": 223,
+    "width": 52,
+    "height": 32
+  },
+  "layers": [
+    {
+      "index": 1,
+      "name": "back hair",
+      "file": "layers/01-back-hair.png",
+      "x": 501,
+      "y": 57,
+      "width": 260,
+      "height": 240,
+      "opacity": 255
+    },
+    {
+      "index": 2,
+      "name": "handwear-r",
+      "file": "layers/02-handwear-r.png",
+      "x": 426,
+      "y": 293,
+      "width": 164,
+      "height": 381,
+      "opacity": 255
+    },
+    {
+      "index": 3,
+      "name": "legwear",
+      "file": "layers/03-legwear.png",
+      "x": 522,
+      "y": 572,
+      "width": 212,
+      "height": 535,
+      "opacity": 255
+    },
+    {
+      "index": 4,
+      "name": "footwear",
+      "file": "layers/04-footwear.png",
+      "x": 527,
+      "y": 1043,
+      "width": 220,
+      "height": 170,
+      "opacity": 255
+    },
+    {
+      "index": 5,
+      "name": "handwear-l",
+      "file": "layers/05-handwear-l.png",
+      "x": 689,
+      "y": 285,
+      "width": 141,
+      "height": 389,
+      "opacity": 255
+    },
+    {
+      "index": 6,
+      "name": "bottomwear",
+      "file": "layers/06-bottomwear.png",
+      "x": 473,
+      "y": 460,
+      "width": 298,
+      "height": 234,
+      "opacity": 255
+    },
+    {
+      "index": 7,
+      "name": "neck",
+      "file": "layers/07-neck.png",
+      "x": 614,
+      "y": 212,
+      "width": 48,
+      "height": 62,
+      "opacity": 255
+    },
+    {
+      "index": 8,
+      "name": "topwear",
+      "file": "layers/08-topwear.png",
+      "x": 520,
+      "y": 235,
+      "width": 211,
+      "height": 257,
+      "opacity": 255
+    },
+    {
+      "index": 9,
+      "name": "face",
+      "file": "layers/09-face.png",
+      "x": 577,
+      "y": 113,
+      "width": 105,
+      "height": 133,
+      "opacity": 255
+    },
+    {
+      "index": 10,
+      "name": "nose",
+      "file": "layers/10-nose.png",
+      "x": 626,
+      "y": 207,
+      "width": 2,
+      "height": 3,
+      "opacity": 255
+    },
+    {
+      "index": 11,
+      "name": "mouth",
+      "file": "layers/11-mouth.png",
+      "x": 624,
+      "y": 221,
+      "width": 15,
+      "height": 4,
+      "opacity": 255
+    },
+    {
+      "index": 12,
+      "name": "earwear",
+      "file": "layers/12-earwear.png",
+      "x": 676,
+      "y": 201,
+      "width": 15,
+      "height": 28,
+      "opacity": 255
+    },
+    {
+      "index": 13,
+      "name": "ears-r",
+      "file": "layers/13-ears-r.png",
+      "x": 571,
+      "y": 190,
+      "width": 26,
+      "height": 32,
+      "opacity": 255
+    },
+    {
+      "index": 14,
+      "name": "ears-l",
+      "file": "layers/14-ears-l.png",
+      "x": 675,
+      "y": 174,
+      "width": 24,
+      "height": 34,
+      "opacity": 255
+    },
+    {
+      "index": 15,
+      "name": "eyebrow-l",
+      "file": "layers/15-eyebrow-l.png",
+      "x": 634,
+      "y": 154,
+      "width": 32,
+      "height": 8,
+      "opacity": 255
+    },
+    {
+      "index": 16,
+      "name": "eyebrow-r",
+      "file": "layers/16-eyebrow-r.png",
+      "x": 581,
+      "y": 162,
+      "width": 29,
+      "height": 11,
+      "opacity": 255
+    },
+    {
+      "index": 17,
+      "name": "eyewhite-r",
+      "file": "layers/17-eyewhite-r.png",
+      "x": 585,
+      "y": 185,
+      "width": 30,
+      "height": 20,
+      "opacity": 255
+    },
+    {
+      "index": 18,
+      "name": "eyewhite-l",
+      "file": "layers/18-eyewhite-l.png",
+      "x": 642,
+      "y": 176,
+      "width": 29,
+      "height": 21,
+      "opacity": 255
+    },
+    {
+      "index": 19,
+      "name": "irides-r",
+      "file": "layers/19-irides-r.png",
+      "x": 592,
+      "y": 185,
+      "width": 20,
+      "height": 20,
+      "opacity": 255
+    },
+    {
+      "index": 20,
+      "name": "irides-l",
+      "file": "layers/20-irides-l.png",
+      "x": 646,
+      "y": 176,
+      "width": 19,
+      "height": 21,
+      "opacity": 255
+    },
+    {
+      "index": 21,
+      "name": "eyelash-r",
+      "file": "layers/21-eyelash-r.png",
+      "x": 575,
+      "y": 180,
+      "width": 39,
+      "height": 22,
+      "opacity": 255
+    },
+    {
+      "index": 22,
+      "name": "eyelash-l",
+      "file": "layers/22-eyelash-l.png",
+      "x": 640,
+      "y": 171,
+      "width": 39,
+      "height": 20,
+      "opacity": 255
+    },
+    {
+      "index": 23,
+      "name": "front hair",
+      "file": "layers/23-front-hair.png",
+      "x": 540,
+      "y": 89,
+      "width": 170,
+      "height": 175,
+      "opacity": 255
+    },
+    {
+      "index": 24,
+      "name": "headwear",
+      "file": "replacements/headwear-v2.png",
+      "x": 525,
+      "y": 53,
+      "width": 210,
+      "height": 118,
+      "opacity": 255
+    }
+  ]
+}
