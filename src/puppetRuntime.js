@@ -7,10 +7,11 @@ import {
   HEAD_LAYERS,
   MOUTH_SHAPES,
   SPRITE_MOUTH_SHAPES,
+  hiddenBaseLayersForPreset,
   SWAY_LAYERS,
   orderLayers,
   pickMouthShape,
-} from "./puppetConfig.js?v=20260527-1540";
+} from "./puppetConfig.js?v=20260528-1047";
 
 const DEFAULT_TEXT =
   "欢迎来到悠然时光游戏周报。本周我们先看三条值得关注的游戏资讯，再聊一款适合周末开局的桌游。";
@@ -123,9 +124,10 @@ export class Web2DPuppet {
   setExpression(name) {
     const preset = EXPRESSION_PRESETS[name] ?? EXPRESSION_PRESETS.neutral;
     this.currentExpression = EXPRESSION_PRESETS[name] ? name : "neutral";
+    const hiddenBaseLayers = new Set(hiddenBaseLayersForPreset(preset));
 
     for (const layerName of EXPRESSION_BASE_LAYERS) {
-      this.setExpressionLayerHidden(layerName, preset.hideBaseEyes);
+      this.setExpressionLayerHidden(layerName, hiddenBaseLayers.has(layerName));
     }
 
     for (const element of this.expressionOverlays.values()) {

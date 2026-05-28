@@ -159,21 +159,10 @@ export const EXPRESSION_PRESETS = {
   },
   happy: {
     label: "开心",
-    hideBaseEyes: true,
+    hideBaseEyes: false,
     lockMouth: true,
     mouth: "smile",
-    overlays: [
-      {
-        id: "happy-eye-r",
-        file: "expressions/eye-happy-r.png",
-        frame: { x: 573, y: 185, width: 44, height: 11 },
-      },
-      {
-        id: "happy-eye-l",
-        file: "expressions/eye-happy-l.png",
-        frame: { x: 639, y: 176, width: 44, height: 11 },
-      },
-    ],
+    overlays: [],
   },
   surprise: {
     label: "惊讶",
@@ -183,6 +172,14 @@ export const EXPRESSION_PRESETS = {
     overlays: [],
   },
 };
+
+export function hiddenBaseLayersForPreset(preset) {
+  if (!preset.hideBaseEyes) {
+    return [];
+  }
+
+  return preset.hiddenBaseLayers ?? EXPRESSION_BASE_LAYERS;
+}
 
 export function pickMouthShape(energy, syllableIndex) {
   if (energy < 0.06) {

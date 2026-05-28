@@ -24,6 +24,20 @@ npm start
 http://localhost:4173
 ```
 
+## 生成测试视频
+
+先保持本地服务运行，然后执行：
+
+```powershell
+node tools/render-match-video.mjs
+```
+
+输出文件会写到：
+
+```text
+C:\Users\Administrator\Downloads\yanboshi-web2d-match-test.mp4
+```
+
 ## 测试
 
 ```powershell

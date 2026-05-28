@@ -56,11 +56,11 @@ describe("puppet animation config", () => {
     assert.equal(SPRITE_MOUTH_SHAPES.smile, undefined);
   });
 
-  it("defines expression presets that can hide base eye layers and show atlas overlays", () => {
+  it("keeps the current happy expression on the original eyes until a complete eye replacement is available", () => {
     assert.ok(EXPRESSION_PRESETS.neutral);
     assert.equal(EXPRESSION_PRESETS.neutral.hideBaseEyes, false);
-    assert.equal(EXPRESSION_PRESETS.happy.hideBaseEyes, true);
-    assert.equal(EXPRESSION_PRESETS.happy.overlays.length, 2);
+    assert.equal(EXPRESSION_PRESETS.happy.hideBaseEyes, false);
+    assert.equal(EXPRESSION_PRESETS.happy.overlays.length, 0);
     assert.equal(EXPRESSION_PRESETS.surprise.mouth, "o");
     assert.equal(EXPRESSION_PRESETS.surprise.lockMouth, true);
   });

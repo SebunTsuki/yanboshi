@@ -1,6 +1,6 @@
-import { Web2DPuppet, loadManifest } from "./puppetRuntime.js?v=20260527-1540";
+import { Web2DPuppet, loadManifest } from "./puppetRuntime.js?v=20260528-1047";
 
-const ASSET_VERSION = "20260527-1540";
+const ASSET_VERSION = "20260528-1047";
 
 const root = document.querySelector("#puppet-root");
 const status = document.querySelector("#status");

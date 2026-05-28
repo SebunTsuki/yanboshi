@@ -202,16 +202,18 @@ describe("Web2DPuppet mouth rendering", () => {
     assert.equal(puppet.spriteMouth.hidden, false);
   });
 
-  it("really hides base eyes and eyebrows for happy expression, then restores their PSD opacity", () => {
+  it("keeps base eyes and eyebrows visible for happy expression", () => {
     const root = new FakeElement("div");
     const puppet = new Web2DPuppet(root, createManifest()).mount();
-    const baseFeatureNames = ["eyewhite-r", "irides-r", "eyelash-r", "eyebrow-r"];
+    const baseFeatureNames = ["eyewhite-r", "irides-r", "eyelash-r"];
 
     puppet.setExpression("happy");
 
     for (const name of baseFeatureNames) {
-      assert.equal(puppet.layerElements.get(name).style.opacity, "0", `${name} should be hidden`);
+      assert.equal(puppet.layerElements.get(name).style.opacity, "1", `${name} should stay visible`);
     }
+
+    assert.equal(puppet.layerElements.get("eyebrow-r").style.opacity, `${128 / 255}`);
 
     puppet.setExpression("neutral");
 
